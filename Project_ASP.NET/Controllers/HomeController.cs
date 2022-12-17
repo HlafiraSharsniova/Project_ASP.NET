@@ -13,12 +13,14 @@ namespace Project_ASP.NET.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index()//метод для контроллера ХОУМ,переход на главную страницу
         {
             return View();
         }
 
-        public IActionResult Privacy()
+
+        public IActionResult Privacy()//переход в прайваси 
+
         {
             return View();
         }
