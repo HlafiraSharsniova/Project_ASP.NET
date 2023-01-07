@@ -7,18 +7,18 @@ namespace Project_ASP.NET.Models
     {
         [HiddenInput]
         public int Id { get; set; }
-        [Required(ErrorMessage = "Proszę podać imię!")]
+        [Display(Name = "Введите имя ")]
+        [Required(ErrorMessage = "Вам нужнно ввести имя")]
+
         public string Name { get; set; }
+        [Display(Name = "Введите фамилию ")]
+        [Required(ErrorMessage = "Вам нужнно ввести фамилию")]
+        public string Surname { get; set; }
+        [Display(Name = "Введите ваш номер телефона")]
+        [Required(ErrorMessage = "Вам нужнно ввести номер телефона")]
+        [StringLength(12, ErrorMessage = "Не менее 12 символов")]
+        public int PhoneNumber { get; set; }
        
-        [RegularExpression(".+\\@.+\\.[a-z]{2,3}")]
-        [Required(ErrorMessage = "Proszę podać poprawny eamil!")]
-        public string Email { get; set; }
-        //public string Subject { get; set; }
-       // [MinLength(length: 5, ErrorMessage = 
-           /// <summary>
-           /// /"Twoja wiadomość musi mieć co najmniej 5 znaków")]
-           /// </summary>
-       //[Required(ErrorMessage = "Proszę wpisz wiadomość!")]
     }
 
 }
