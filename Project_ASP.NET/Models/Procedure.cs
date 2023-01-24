@@ -1,19 +1,30 @@
-﻿namespace Project_ASP.NET.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace Project_ASP.NET.Models
 {
-    public class Procedure
+    public class Procedure // описание самой услуги и к какой категории она относиться
     {
-     public int Id { get; set; }
-     public string ProcedureName { get; set; }
-     public string Description { get; set; } //описание услуги 
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string shortDesc { get; set; } //короткое описание
+        public string longDesc { get; set; }
+        public string img { get; set; }
+        public ushort price { get; set; } //юшорт потому что цена не может быть с минусом и это не миллион знаков
+        public bool isFavourite { get; set; } //
+        public bool available { get; set; } //если о товарах,то есть ли в наличии на складе и сколько,не знаю,буду ли использовать 
 
-     public ushort Price { get; set; }
+        public int categoryID { get; set; } //руки или ноги,это и будет категория,к которой будут относиться процедуры
 
-     public bool isFavourite { get; set; }//если тру,то эта услуга будет
-                                          //отображаться на главной странице,
-                                          //если фолс, то не будет
-     public int Available { get; set; } 
+        public virtual CategoryOfProcedure Category { get; set; }
 
-     public List<Reservation> reservation { get; set; }
+
+
+
+
+
+
+
 
     }
 }
