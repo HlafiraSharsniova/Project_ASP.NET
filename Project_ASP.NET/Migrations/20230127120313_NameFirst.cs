@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProjectASP.NET.Migrations
 {
     /// <inheritdoc />
-    public partial class First : Migration
+    public partial class NameFirst : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -51,8 +51,7 @@ namespace ProjectASP.NET.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Desc = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     img = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    price = table.Column<double>(type: "float", nullable: false),
-                    ProcedureCategory = table.Column<int>(type: "int", nullable: false)
+                    price = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -65,8 +64,13 @@ namespace ProjectASP.NET.Migrations
                 {
                     ReservationID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    NameOfReservation = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DescriptionOfReservation = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    imgOfReservation = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    priceOfReservation = table.Column<double>(type: "float", nullable: false),
                     DateOfReservation = table.Column<DateTime>(type: "datetime2", nullable: false),
                     TimeOfReservation = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ProcedureCategory = table.Column<int>(type: "int", nullable: false),
                     MasterID = table.Column<int>(type: "int", nullable: false),
                     ClientID = table.Column<int>(type: "int", nullable: false)
                 },

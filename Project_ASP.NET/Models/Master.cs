@@ -7,8 +7,9 @@ namespace Project_ASP.NET.Models
     {
         [Key]
         public int MasterID { get; set; }
+        [Display(Name = "Name")]
         public string Name { get; set; }
-
+        [Display(Name = "Biography")]
         public string Bio { get; set; }
         //Relationships
         public List<Reservation> Reservations { get; set; }

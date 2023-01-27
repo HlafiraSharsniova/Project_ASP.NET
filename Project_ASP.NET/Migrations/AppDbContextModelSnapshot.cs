@@ -91,9 +91,6 @@ namespace ProjectASP.NET.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProcedureCategory")
-                        .HasColumnType("int");
-
                     b.Property<string>("img")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -135,11 +132,29 @@ namespace ProjectASP.NET.Migrations
                     b.Property<DateTime>("DateOfReservation")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("DescriptionOfReservation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("MasterID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameOfReservation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProcedureCategory")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("TimeOfReservation")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("imgOfReservation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("priceOfReservation")
+                        .HasColumnType("float");
 
                     b.HasKey("ReservationID");
 

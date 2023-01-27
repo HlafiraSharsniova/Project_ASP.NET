@@ -20,8 +20,9 @@ namespace Project_ASP.NET.Data
                 pr.ReservationID
             });
 
+            
+            modelBuilder.Entity<Procedure_Reservation>().HasOne(r => r.Reservation).WithMany(pr => pr.Procedures_Reservations).HasForeignKey(r => r.ReservationID);
             modelBuilder.Entity<Procedure_Reservation>().HasOne(r => r.Procedure).WithMany(pr => pr.Procedures_Reservations).HasForeignKey(r => r.ProcedureID);
-            modelBuilder.Entity<Procedure_Reservation>().HasOne(r => r.Reservation).WithMany(pr => pr.Procedures_Reservations).HasForeignKey(r => r.ReservationID);            
 
             base.OnModelCreating(modelBuilder);
         }

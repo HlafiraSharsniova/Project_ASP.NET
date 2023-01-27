@@ -14,8 +14,8 @@ namespace Project_ASP.NET.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var allMasters = await _context.Reservations.ToListAsync();
-            return View();
+            var allReservations = await _context.Reservations.Include(n => n.Master).ToListAsync();
+            return View(allReservations);
         }
     }
 }

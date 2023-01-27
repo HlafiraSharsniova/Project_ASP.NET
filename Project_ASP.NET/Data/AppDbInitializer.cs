@@ -12,7 +12,7 @@ namespace Project_ASP.NET.Data
                 context.Database.EnsureCreated();
 
                 //Masters
-                if(!context.Masters.Any())
+                if (!context.Masters.Any())
                 {
                     context.Masters.AddRange(new List<Master>()
                     {
@@ -26,7 +26,7 @@ namespace Project_ASP.NET.Data
                     context.SaveChanges();
 
                 }
-                
+
                 //Clients
                 if (!context.Clients.Any())
                 {
@@ -53,6 +53,76 @@ namespace Project_ASP.NET.Data
 
                          new Reservation()
                         {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                          new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                           new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                            new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                             new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                              new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                               new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
                             DateOfReservation = DateTime.Now,
                             TimeOfReservation = DateTime.Now.AddMinutes(60),
                             MasterID = 1,
@@ -61,6 +131,10 @@ namespace Project_ASP.NET.Data
 
                           new Reservation()
                         {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
                             DateOfReservation = DateTime.Now,
                             TimeOfReservation = DateTime.Now.AddMinutes(60),
                             MasterID = 1,
@@ -68,6 +142,10 @@ namespace Project_ASP.NET.Data
                         },
                            new Reservation()
                         {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
                             DateOfReservation = DateTime.Now,
                             TimeOfReservation = DateTime.Now.AddMinutes(60),
                             MasterID = 1,
@@ -75,6 +153,87 @@ namespace Project_ASP.NET.Data
                         },
                             new Reservation()
                         {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                             new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                              new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                               new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                                new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                                 new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                                  new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
+                            DateOfReservation = DateTime.Now,
+                            TimeOfReservation = DateTime.Now.AddMinutes(60),
+                            MasterID = 1,
+                            ClientID = 1
+                        },
+                            new Reservation()
+                        {
+                            NameOfReservation = "Reserved: Manicure",
+                            DescriptionOfReservation = "Some information",
+                            imgOfReservation = "",
+                            priceOfReservation = 70,
                             DateOfReservation = DateTime.Now,
                             TimeOfReservation = DateTime.Now.AddMinutes(60),
                             MasterID = 1,
@@ -90,26 +249,26 @@ namespace Project_ASP.NET.Data
                 {
                     context.Procedures.AddRange(new List<Procedure>()
                     {
-                       
+
                         new Procedure ()
 
-                        { 
+                        {
                             Name = "Manicure",
                             Desc = "Combined finger manicure.Without gel polish coating.",
                             img = "/img/mani.jpg",
                             price = 70,
                             ProcedureCategory = Enums.ProcedureCategory.Manicure
-                        
+
                         },
                         new Procedure ()
-                        { 
+                        {
                             Name = "Manicure for men",
                             Desc = "Combined finger manicure.Without gel polish coating.",
                             img = "/img/men.jpg",
                             price = 80,
                             ProcedureCategory = Enums.ProcedureCategory.Manicure
                         },
-                        new Procedure () 
+                        new Procedure ()
                         {
                             Name = "Hybrid manicure",
                             Desc = "Combined manicure of fingers.With gel lacquer coating.",
@@ -117,7 +276,7 @@ namespace Project_ASP.NET.Data
                             price = 100,
                             ProcedureCategory = Enums.ProcedureCategory.Manicure
                         },
-                        new Procedure () 
+                        new Procedure ()
                         {
                             Name = "Manicure + gel enhacement",
                             Desc = "Combined manicure of fingers.With gel coating.",
@@ -125,7 +284,7 @@ namespace Project_ASP.NET.Data
                             price = 120,
                             ProcedureCategory = Enums.ProcedureCategory.Manicure
                         },
-                        new Procedure () 
+                        new Procedure ()
                         {
                             Name = "Extension S-M",
                             Desc = "Combined manicure of fingers.With nail extension of length S-M.",
@@ -133,7 +292,7 @@ namespace Project_ASP.NET.Data
                             price = 160,
                             ProcedureCategory = Enums.ProcedureCategory.NailExtentions
                         },
-                        new Procedure () 
+                        new Procedure ()
                         {
                             Name = "Extension L-XL",
                             Desc = "Combined manicure of fingers.With nail extension of length L-XL.",
@@ -141,7 +300,7 @@ namespace Project_ASP.NET.Data
                             price = 180,
                             ProcedureCategory = Enums.ProcedureCategory.NailExtentions
                         },
-                        new Procedure () 
+                        new Procedure ()
                         {
                             Name = "Gel replenishment S-M",
                             Desc = "Combined manicure of fingers.With gel replenishment of length S-M.",
@@ -149,7 +308,7 @@ namespace Project_ASP.NET.Data
                             price = 140,
                             ProcedureCategory = Enums.ProcedureCategory.NailExtentions
                         },
-                        new Procedure () 
+                        new Procedure ()
                         {
                             Name = "Gel replenishment L-XL",
                             Desc = "Combined manicure of fingers.With gel replenishment of length L-XL.",
@@ -157,7 +316,7 @@ namespace Project_ASP.NET.Data
                             price = 160,
                             ProcedureCategory = Enums.ProcedureCategory.NailExtentions
                         },
-                        new Procedure () 
+                        new Procedure ()
                         {
                             Name = "Design",
                             Desc = "Any design on nails.",
@@ -165,7 +324,7 @@ namespace Project_ASP.NET.Data
                             price = 20,
                             ProcedureCategory = Enums.ProcedureCategory.Additional
                         },
-                        new Procedure () 
+                        new Procedure ()
                         {
                             Name = "French",
                             Desc = "French.",
@@ -173,7 +332,7 @@ namespace Project_ASP.NET.Data
                             price = 30,
                             ProcedureCategory = Enums.ProcedureCategory.Additional
                         },
-                        new Procedure () 
+                        new Procedure ()
                         {
                             Name = "Removal",
                             Desc = "Removing the coating from nails.",
@@ -189,7 +348,7 @@ namespace Project_ASP.NET.Data
                             price = 10,
                             ProcedureCategory = Enums.ProcedureCategory.Additional
                         },
-                        new Procedure () 
+                        new Procedure ()
                         {
                             Name = "Nail extentions",
                             Desc = "Nail extentions(1 nail).",
@@ -260,6 +419,21 @@ namespace Project_ASP.NET.Data
                         {
                            ProcedureID = 3,
                            ReservationID = 4,
+                        },
+                            new Procedure_Reservation()
+                        {
+                           ProcedureID = 7,
+                           ReservationID = 5,
+                        },
+                             new Procedure_Reservation()
+                        {
+                           ProcedureID = 8,
+                           ReservationID = 6,
+                        },
+                              new Procedure_Reservation()
+                        {
+                           ProcedureID = 5,
+                           ReservationID = 7,
                         },
                     });
                     context.SaveChanges();

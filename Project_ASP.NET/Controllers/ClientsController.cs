@@ -14,8 +14,8 @@ namespace Project_ASP.NET.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var allMasters = await _context.Clients.ToListAsync();
-            return View();
+            var allClients = await _context.Clients.ToListAsync();
+            return View(allClients);
         }
     }
 }

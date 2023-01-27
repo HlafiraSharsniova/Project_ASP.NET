@@ -1,9 +1,9 @@
 ﻿@*Define model*@
-@model IEnumerable<Procedure>
+@model IEnumerable<Master>
 
 @*Define ViewData*@
 @{
-    ViewData["Title"] = "List of Procedures";
+    ViewData["Title"] = "List of Masters";
 }
 
 @*Write code*@
@@ -15,9 +15,7 @@
             <thead>
                 <tr class="text-center">
                     <th>@Html.DisplayNameFor(model => model.Name)</th>
-                    <th>@Html.DisplayNameFor(model => model.Desc)</th>
-                    <th>@Html.DisplayNameFor(model => model.img)</th>
-                    <th>@Html.DisplayNameFor(model => model.price)</th>
+                    <th>@Html.DisplayNameFor(model => model.Bio)</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -26,16 +24,10 @@
                 {
                     <tr>
                         <td class="align-middle">
-                            <img class="round-circle" src="@item.img" alt="@item.Name" style="max-width: 150px" />
-                        </td>
-                        <td class="align-middle">
                             @Html.DisplayFor(modelItem => item.Name)
                         </td>
                         <td class="align-middle">
-                            @Html.DisplayFor(modelItem => item.Desc)
-                        </td>
-                        <td class="align-middle">
-                            @Html.DisplayFor(modelItem => item.price)
+                            @Html.DisplayFor(modelItem => item.Bio)
                         </td>
                         <td class="align-middle">
                             <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i>Edit</a>
@@ -47,8 +39,4 @@
             </tbody>
         </table>
     </div>
-</div>
-<div style="position: fixed; right: 25px; bottom: 25px";class="text-white">
-    <a asp-controller="Procedures" asp-action="Create" class="btn btn-success">
-        <i class="bi bi-plus-circle"></i>Add New</a>
 </div>
