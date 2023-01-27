@@ -12,8 +12,8 @@ using Project_ASP.NET.Data;
 namespace ProjectASP.NET.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230125230154_Initial")]
-    partial class Initial
+    [Migration("20230126222448_First")]
+    partial class First
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

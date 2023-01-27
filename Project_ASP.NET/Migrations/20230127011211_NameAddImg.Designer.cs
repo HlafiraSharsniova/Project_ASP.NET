@@ -12,8 +12,8 @@ using Project_ASP.NET.Data;
 namespace ProjectASP.NET.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230125224619_First")]
-    partial class First
+    [Migration("20230127011211_NameAddImg")]
+    partial class NameAddImg
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

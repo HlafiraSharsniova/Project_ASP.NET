@@ -8,10 +8,14 @@ namespace Project_ASP.NET.Models
     {
         [Key]
         public int ProcedureId { get; set; }
+        [Display(Name = "The name of the procedure")]
         public string Name { get; set; }
+        [Display(Name = "Description of the procedure")]
         public string Desc { get; set; } //короткое описание
+        [Display(Name = "Photo of the procedure")]
 
         public string img { get; set; }
+        [Display(Name = "The price of the procedure")]
         public double price { get; set; } //юшорт потому что цена не может быть с минусом и это не миллион знаков
         //public bool isFavourite { get; set; } //
         //public bool available { get; set; } //если о товарах,то есть ли в наличии на складе и сколько,не знаю,буду ли использовать 

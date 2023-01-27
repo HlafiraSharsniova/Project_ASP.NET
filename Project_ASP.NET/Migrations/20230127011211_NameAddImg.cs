@@ -5,7 +5,7 @@
 namespace ProjectASP.NET.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class NameAddImg : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

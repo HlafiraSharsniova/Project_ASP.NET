@@ -6,6 +6,7 @@ namespace Project_ASP.NET.Models
 {
     public class Reservation
     {
+        [Key]
         public int ReservationID { get; set; }
 
         public DateTime DateOfReservation { get; set; }

@@ -51,7 +51,7 @@ namespace ProjectASP.NET.Migrations
 
                     b.HasKey("ClientID");
 
-                    b.ToTable("Clients", (string)null);
+                    b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("Project_ASP.NET.Models.Master", b =>
@@ -72,7 +72,7 @@ namespace ProjectASP.NET.Migrations
 
                     b.HasKey("MasterID");
 
-                    b.ToTable("Masters", (string)null);
+                    b.ToTable("Masters");
                 });
 
             modelBuilder.Entity("Project_ASP.NET.Models.Procedure", b =>
@@ -103,7 +103,7 @@ namespace ProjectASP.NET.Migrations
 
                     b.HasKey("ProcedureId");
 
-                    b.ToTable("Procedures", (string)null);
+                    b.ToTable("Procedures");
                 });
 
             modelBuilder.Entity("Project_ASP.NET.Models.Procedure_Reservation", b =>
@@ -118,7 +118,7 @@ namespace ProjectASP.NET.Migrations
 
                     b.HasIndex("ReservationID");
 
-                    b.ToTable("Procedures_Reservations", (string)null);
+                    b.ToTable("Procedures_Reservations");
                 });
 
             modelBuilder.Entity("Project_ASP.NET.Models.Reservation", b =>
@@ -147,7 +147,7 @@ namespace ProjectASP.NET.Migrations
 
                     b.HasIndex("MasterID");
 
-                    b.ToTable("Reservations", (string)null);
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("Project_ASP.NET.Models.Procedure_Reservation", b =>
