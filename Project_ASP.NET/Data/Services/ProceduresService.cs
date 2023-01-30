@@ -12,31 +12,38 @@ namespace Project_ASP.NET.Data.Services
         {
             _context = context;
         }
-        public void Add(Procedure procedure)
+        public async Task AddAsync(Procedure procedure)
         {
-           _context.Procedures.Add(procedure);
-            _context.SaveChanges();
+            await _context.Procedures.AddAsync(procedure);
+            await _context.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Procedures.FirstOrDefaultAsync(n => n.ProcedureId == id);
+            _context.Procedures.Remove(result);
+            await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Procedure>> GetAll()
+        public async Task<IEnumerable<Procedure>> GetAllAsync()
         {
             var result = await _context.Procedures.ToListAsync();
             return result;
         }
 
-        public Procedure GetById(int id)
+
+
+        public async Task<Procedure> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Procedures.FirstOrDefaultAsync(n => n.ProcedureId == id);
+            return result;
         }
 
-        public Procedure Update(int id, Procedure newProcedure)
+        public async Task<Procedure> UpdateAsync(int id, Procedure newProcedure)
         {
-            throw new NotImplementedException();
+            _context.Update(newProcedure);
+            await _context.SaveChangesAsync();
+            return newProcedure;
         }
     }
 }

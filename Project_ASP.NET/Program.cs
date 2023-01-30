@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 //Services configuration
 builder.Services.AddScoped<IProceduresService, ProceduresService>();
+//builder.Services.AddScoped<IMastersService, MastersService>();
 
 builder.Services.AddControllersWithViews();
 

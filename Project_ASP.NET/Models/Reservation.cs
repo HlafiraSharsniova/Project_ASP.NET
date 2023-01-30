@@ -8,7 +8,7 @@ namespace Project_ASP.NET.Models
     public class Reservation
     {
         [Key]
-        public int ReservationID { get; set; }
+        public int ReservationId { get; set; }
         [Display(Name ="Name")]
         public string NameOfReservation { get; set; }
         [Display(Name = "Description of procedure")]

@@ -27,6 +27,6 @@ namespace Project_ASP.NET.Models
         public ProcedureCategory ProcedureCategory { get; set; }
 
         //Relationships
-        public List<Procedure_Reservation> Procedures_Reservations { get; set; }
+        public List<Procedure_Reservation>? Procedures_Reservations { get; set; }
     }
 }

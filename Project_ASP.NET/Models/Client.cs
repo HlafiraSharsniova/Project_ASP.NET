@@ -6,7 +6,7 @@ namespace Project_ASP.NET.Models
     public class Client
     {
         [Key]
-        public int ClientID { get; set; }
+        public int ClientId { get; set; }
         [Display(Name = "Name")]
         public string Name { get; set; }
         [Display(Name = "Surname")]

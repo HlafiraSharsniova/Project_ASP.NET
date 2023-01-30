@@ -6,7 +6,7 @@ namespace Project_ASP.NET.Models
     public class Master
     {
         [Key]
-        public int MasterID { get; set; }
+        public int MasterId { get; set; }
         [Display(Name = "Name")]
         public string Name { get; set; }
         [Display(Name = "Biography")]

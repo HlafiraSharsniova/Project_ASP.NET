@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project_ASP.NET.Data;
+using Project_ASP.NET.Data.Services;
 
 namespace Project_ASP.NET.Controllers
 {
     public class MastersController : Controller
     {
+
         private readonly AppDbContext _context;
 
         public MastersController(AppDbContext context)
@@ -14,8 +16,8 @@ namespace Project_ASP.NET.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var allMasters = await _context.Masters.ToListAsync();
-            return View(allMasters);
+            var allClients = await _context.Masters.ToListAsync();
+            return View(allClients);
         }
     }
 }
