@@ -9,7 +9,7 @@ namespace Project_ASP.NET.Models
     {
         [Key]
         public int ReservationId { get; set; }
-        [Display(Name ="Name")]
+        [Display(Name = "Name")]
         public string NameOfReservation { get; set; }
         [Display(Name = "Description of procedure")]
         public string DescriptionOfReservation { get; set; }
@@ -24,7 +24,7 @@ namespace Project_ASP.NET.Models
         public DateTime TimeOfReservation { get; set; }
         //public int categoryID { get; set; } //руки или ноги,это и будет категория,к которой будут относиться процедуры
         //public ProcedureCategory ProcedureCategory { get; set; }
-
+        public ProcedureCategory ProcedureCategory { get; set; }
 
         //Relationship
         public List<Procedure_Reservation> Procedures_Reservations { get; set; }
@@ -38,5 +38,6 @@ namespace Project_ASP.NET.Models
         public int ClientID { get; set; }
         [ForeignKey("ClientID")]
         public Client Client { get; set; }
-    }
+
+    }  
 }

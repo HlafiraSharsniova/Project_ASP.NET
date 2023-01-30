@@ -12,8 +12,8 @@ using Project_ASP.NET.Data;
 namespace ProjectASP.NET.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230127120313_NameFirst")]
-    partial class NameFirst
+    [Migration("20230130211736_Nails")]
+    partial class Nails
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,11 +27,11 @@ namespace ProjectASP.NET.Migrations
 
             modelBuilder.Entity("Project_ASP.NET.Models.Client", b =>
                 {
-                    b.Property<int>("ClientID")
+                    b.Property<int>("ClientId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClientID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClientId"));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -39,31 +39,35 @@ namespace ProjectASP.NET.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("PhoneNumber")
+                        .HasMaxLength(9)
                         .HasColumnType("int");
 
                     b.Property<string>("Surname")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("ClientID");
+                    b.HasKey("ClientId");
 
                     b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("Project_ASP.NET.Models.Master", b =>
                 {
-                    b.Property<int>("MasterID")
+                    b.Property<int>("MasterId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MasterID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MasterId"));
 
                     b.Property<string>("Bio")
                         .IsRequired()
@@ -73,7 +77,7 @@ namespace ProjectASP.NET.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("MasterID");
+                    b.HasKey("MasterId");
 
                     b.ToTable("Masters");
                 });
@@ -92,7 +96,8 @@ namespace ProjectASP.NET.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("img")
                         .IsRequired()
@@ -123,11 +128,11 @@ namespace ProjectASP.NET.Migrations
 
             modelBuilder.Entity("Project_ASP.NET.Models.Reservation", b =>
                 {
-                    b.Property<int>("ReservationID")
+                    b.Property<int>("ReservationId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReservationID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReservationId"));
 
                     b.Property<int>("ClientID")
                         .HasColumnType("int");
@@ -159,7 +164,7 @@ namespace ProjectASP.NET.Migrations
                     b.Property<double>("priceOfReservation")
                         .HasColumnType("float");
 
-                    b.HasKey("ReservationID");
+                    b.HasKey("ReservationId");
 
                     b.HasIndex("ClientID");
 

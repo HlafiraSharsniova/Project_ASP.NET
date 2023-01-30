@@ -24,7 +24,7 @@ namespace Project_ASP.NET.Models
         //public bool isFavourite { get; set; } //
         //public bool available { get; set; } //если о товарах,то есть ли в наличии на складе и сколько,не знаю,буду ли использовать 
 
-        public ProcedureCategory ProcedureCategory { get; set; }
+        
 
         //Relationships
         public List<Procedure_Reservation>? Procedures_Reservations { get; set; }

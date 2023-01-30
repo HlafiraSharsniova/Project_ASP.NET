@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProjectASP.NET.Migrations
 {
     /// <inheritdoc />
-    public partial class NameFirst : Migration
+    public partial class Nails : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,31 +15,31 @@ namespace ProjectASP.NET.Migrations
                 name: "Clients",
                 columns: table => new
                 {
-                    ClientID = table.Column<int>(type: "int", nullable: false)
+                    ClientId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhoneNumber = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Surname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    PhoneNumber = table.Column<int>(type: "int", maxLength: 9, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Password = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Clients", x => x.ClientID);
+                    table.PrimaryKey("PK_Clients", x => x.ClientId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Masters",
                 columns: table => new
                 {
-                    MasterID = table.Column<int>(type: "int", nullable: false)
+                    MasterId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Bio = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Masters", x => x.MasterID);
+                    table.PrimaryKey("PK_Masters", x => x.MasterId);
                 });
 
             migrationBuilder.CreateTable(
@@ -48,7 +48,7 @@ namespace ProjectASP.NET.Migrations
                 {
                     ProcedureId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Desc = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     img = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     price = table.Column<double>(type: "float", nullable: false)
@@ -62,7 +62,7 @@ namespace ProjectASP.NET.Migrations
                 name: "Reservations",
                 columns: table => new
                 {
-                    ReservationID = table.Column<int>(type: "int", nullable: false)
+                    ReservationId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NameOfReservation = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DescriptionOfReservation = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -76,18 +76,18 @@ namespace ProjectASP.NET.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Reservations", x => x.ReservationID);
+                    table.PrimaryKey("PK_Reservations", x => x.ReservationId);
                     table.ForeignKey(
                         name: "FK_Reservations_Clients_ClientID",
                         column: x => x.ClientID,
                         principalTable: "Clients",
-                        principalColumn: "ClientID",
+                        principalColumn: "ClientId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Reservations_Masters_MasterID",
                         column: x => x.MasterID,
                         principalTable: "Masters",
-                        principalColumn: "MasterID",
+                        principalColumn: "MasterId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -111,7 +111,7 @@ namespace ProjectASP.NET.Migrations
                         name: "FK_Procedures_Reservations_Reservations_ReservationID",
                         column: x => x.ReservationID,
                         principalTable: "Reservations",
-                        principalColumn: "ReservationID",
+                        principalColumn: "ReservationId",
                         onDelete: ReferentialAction.Cascade);
                 });
 

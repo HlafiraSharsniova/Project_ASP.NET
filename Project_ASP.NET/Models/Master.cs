@@ -8,8 +8,10 @@ namespace Project_ASP.NET.Models
         [Key]
         public int MasterId { get; set; }
         [Display(Name = "Name")]
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
         [Display(Name = "Biography")]
+        [Required(ErrorMessage = "Biography is required")]
         public string Bio { get; set; }
         //Relationships
         public List<Reservation> Reservations { get; set; }

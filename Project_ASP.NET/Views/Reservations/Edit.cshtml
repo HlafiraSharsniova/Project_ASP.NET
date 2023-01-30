@@ -1,0 +1,99 @@
+﻿@model NewReservationVM
+@using Project_ASP.NET.Data.Enums;
+@{
+    ViewData["Title"] = "Update reservation";
+}
+<div class=row>
+    <div class="col-md-8 offset-2 ">
+        <p>
+            <h4>Update reservation</h4>
+        </p>
+        <div class=" row">
+            <div class="col-md-8 offset-2 ">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class=" text-danger"></div>
+                    <div class=" row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="NameOfReservation"></label>
+                                <input asp-for="NameOfReservation" class="form-control"/>
+                                <span asp-validation-for="NameOfReservation" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="DateOfReservation"></label>
+                                <input asp-for="DateOfReservation" type="date" class="form-control" />
+                                <span asp-validation-for="DateOfReservation" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TimeOfReservation"></label>
+                                <input asp-for="TimeOfReservation" type="time" class="form-control" />
+                                <span asp-validation-for="TimeOfReservation" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="priceOfReservation"></label>
+                                <input asp-for="priceOfReservation" type="number" class="form-control" />
+                                <span asp-validation-for="priceOfReservation" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="imgOfReservation"></label>
+                                <input asp-for="imgOfReservation" class="form-control" />
+                                <span asp-validation-for="imgOfReservation" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProcedureCategory"></label>
+                                <select asp-for="ProcedureCategory" class="form-control" asp-items="Html.GetEnumSelectList<ProcedureCategory>()"></select>
+                                <span asp-validation-for="ProcedureCategory" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ProcedureIds"></label>
+                                <select asp-for="ProcedureIds" class="form-control"asp-items="ViewBag.Procedures" multiple></select>
+                                <span asp-validation-for="ProcedureIds" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="MasterID"></label>
+                                <select asp-for="MasterID" class="form-control" asp-items="ViewBag.Masters"></select>
+                                <span asp-validation-for="MasterID" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ClientID"></label>
+                                <select asp-for="ClientID" class="form-control" asp-items="ViewBag.Clients"></select>
+                                <span asp-validation-for="ClientID" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label asp-for="DescriptionOfReservation"></label>
+                                <textarea asp-for="DescriptionOfReservation" class="form-control"></textarea>
+                                <span asp-validation-for="DescriptionOfReservation" class="text-danger"></span>
+                            </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 offset-4 text-center" >
+                        <img widht="100%" id="ImageUrlPreview"/>
+                    </div>
+                    <div class="form-group">
+                         <input type="submit" value="Update" class="btn btn-outline-success" float-right/>
+                         <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(function(){
+            var output = document.getElementById("ImageUrlPreview");
+            output.src = $("#imgOfReservation").val();
+        });
+
+
+        $("#imgOfReservation").on("change", function () {
+            var output = document.getElementById("ImageUrlPreview");
+            output.src = $(this).val();
+        })
+    </script>
+}

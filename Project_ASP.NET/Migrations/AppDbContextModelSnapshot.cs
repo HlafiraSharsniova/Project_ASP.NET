@@ -24,11 +24,11 @@ namespace ProjectASP.NET.Migrations
 
             modelBuilder.Entity("Project_ASP.NET.Models.Client", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ClientId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClientId"));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -36,31 +36,35 @@ namespace ProjectASP.NET.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("PhoneNumber")
+                        .HasMaxLength(9)
                         .HasColumnType("int");
 
                     b.Property<string>("Surname")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ClientId");
 
                     b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("Project_ASP.NET.Models.Master", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("MasterId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MasterId"));
 
                     b.Property<string>("Bio")
                         .IsRequired()
@@ -70,18 +74,18 @@ namespace ProjectASP.NET.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("MasterId");
 
                     b.ToTable("Masters");
                 });
 
             modelBuilder.Entity("Project_ASP.NET.Models.Procedure", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProcedureId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProcedureId"));
 
                     b.Property<string>("Desc")
                         .IsRequired()
@@ -92,9 +96,6 @@ namespace ProjectASP.NET.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("ProcedureCategory")
-                        .HasColumnType("int");
-
                     b.Property<string>("img")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -102,33 +103,33 @@ namespace ProjectASP.NET.Migrations
                     b.Property<double>("price")
                         .HasColumnType("float");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProcedureId");
 
                     b.ToTable("Procedures");
                 });
 
             modelBuilder.Entity("Project_ASP.NET.Models.Procedure_Reservation", b =>
                 {
-                    b.Property<int>("ProcedureId")
+                    b.Property<int>("ProcedureID")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReservationId")
+                    b.Property<int>("ReservationID")
                         .HasColumnType("int");
 
-                    b.HasKey("ProcedureId", "ReservationId");
+                    b.HasKey("ProcedureID", "ReservationID");
 
-                    b.HasIndex("ReservationId");
+                    b.HasIndex("ReservationID");
 
                     b.ToTable("Procedures_Reservations");
                 });
 
             modelBuilder.Entity("Project_ASP.NET.Models.Reservation", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ReservationId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReservationId"));
 
                     b.Property<int>("ClientID")
                         .HasColumnType("int");
@@ -147,6 +148,9 @@ namespace ProjectASP.NET.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ProcedureCategory")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("TimeOfReservation")
                         .HasColumnType("datetime2");
 
@@ -157,7 +161,7 @@ namespace ProjectASP.NET.Migrations
                     b.Property<double>("priceOfReservation")
                         .HasColumnType("float");
 
-                    b.HasKey("Id");
+                    b.HasKey("ReservationId");
 
                     b.HasIndex("ClientID");
 
@@ -170,13 +174,13 @@ namespace ProjectASP.NET.Migrations
                 {
                     b.HasOne("Project_ASP.NET.Models.Procedure", "Procedure")
                         .WithMany("Procedures_Reservations")
-                        .HasForeignKey("ProcedureId")
+                        .HasForeignKey("ProcedureID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Project_ASP.NET.Models.Reservation", "Reservation")
                         .WithMany("Procedures_Reservations")
-                        .HasForeignKey("ReservationId")
+                        .HasForeignKey("ReservationID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

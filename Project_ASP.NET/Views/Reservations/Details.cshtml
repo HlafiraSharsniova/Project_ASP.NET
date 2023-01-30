@@ -1,0 +1,79 @@
+﻿@model Reservation
+
+@{
+    ViewData["Title"] = "Reservation details";
+}
+<div class="row">
+        <div class="col-md-8 offset-2">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-info">
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    @Model.NameOfReservation
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="@Model.imgOfReservation" width="100%" alt="@Model.NameOfReservation">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-text">@Model.DescriptionOfReservation</p>
+                            <p class="card-text">
+                                <b>Name:<b>
+                            <a asp-controller="Masters" asp-action="Details" asp-route-id="@Model.MasterID">@Model.Master.Name</a>
+                            </p>
+                            <p class="card-text"><b>Description: <b>@Model.DescriptionOfReservation</p>
+                            <p class="card-text"><b>Date of Reservation: <b>@Model.DateOfReservation.ToString("dd MMM yy")</p>
+                            <p class="card-text"><b>Time of Reservation: </b>@Model.TimeOfReservation.ToString("dd MMM yy")</p>
+                            <p class="card-text ">
+                                <b>Status: </b>
+                                @if (DateTime.Now >= Model.DateOfReservation && DateTime.Now <= Model.TimeOfReservation)
+                                {
+                                    <span badge bg-success text-white>AVAILABLE</span>
+                                }
+                                else if (DateTime.Now > Model.TimeOfReservation)
+                                {
+                                    <span badge bg-danger text-white>EXPIRED</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-primary text-white">UPCOMING</span>
+                                }
+                            </p>
+                            <p class="card-text"> 
+                                <b>Procedures: </b>
+                                <hr />
+                                <div class="row">
+                                    @foreach (var procedure in Model.Procedures_Reservations)
+                                    {
+                                       <div class="column text-center">
+                                           <img class="border-info rounded-circle" src="@procedure.Procedure.img" style="max-width: 150px" />
+                                           <a asp-controller="Procedures" asp-action="Details" asp-route-id="@procedure.ProcedureID">@procedure.Procedure.Name</a>
+                                       </div>
+                                    }
+                                </div>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card-footer">
+                            <p class="card-text">
+                                <a class="btn btn-outline-primary float-right" asp-action="Index">
+                                    Back to List
+                                </a>
+                                <a class="btn btn-success text-white">
+                                    <i class="bi bi-cart-plus"></i> Add to Cart (Price @Model.priceOfReservation.ToString("c"))
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+

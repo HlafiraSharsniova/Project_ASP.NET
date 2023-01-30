@@ -15,7 +15,7 @@
                         <h5 class="card-title">
                             @item.NameOfReservation
                             
-                            <a class="text-white float-right"><i class="bi bi-pencil-square"></i></a>
+                            <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.ReservationId"><i class="bi bi-pencil-square"></i></a>
                             
                         </h5>
                     </p>
@@ -27,10 +27,11 @@
             <div class="col-md-6">
                 <div class="card-body">
                     <p class="card-text">@item.DescriptionOfReservation</p>
-                    <p class="card-text"><b>Name: <b>@item.Master.Name</p>
+                    <p class="card-text"><b>Name: <b>@item.NameOfReservation</p>
                     <p class="card-text"><b>Description: <b>@item.DescriptionOfReservation</p>
                     <p class="card-text"><b>Date of Reservation: <b>@item.DateOfReservation.ToString("dd MMM yy")</p>
                     <p class="card-text"><b>Time of Reservation: </b>@item.TimeOfReservation.ToString("dd MMM yy")</p>
+                    <p class="card-text"><b>Category: </b>@item.ProcedureCategory</p>
                     <p class="card-text ">
                         <b>Status: </b>
                         @if (DateTime.Now >= item.DateOfReservation && DateTime.Now <= item.TimeOfReservation)
@@ -50,7 +51,7 @@
             <div class="col-md-12">
                 <div class="card-footer ">
                     <p class="card-text">
-                                <a class="btn btn-outline-primary float-right">
+                                <a class="btn btn-outline-primary float-right" asp-action="Details" asp-route-id="@item.ReservationId">
                                     <i class="bi bi-eye-fill"></i> Show Details
                                 </a>
                                 <a class="btn btn-success text-white">
@@ -64,3 +65,4 @@
         </div>
     }
     </div>
+@await Html.PartialAsync("_CreateItem","Reservations" )
