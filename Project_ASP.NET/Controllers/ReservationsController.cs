@@ -19,7 +19,18 @@ namespace Project_ASP.NET.Controllers
             var allReservations = await _service.GetAllAsync();
             return View(allReservations);
         }
-        
+        public async Task<IActionResult> Filter(string searchString)
+        {
+            var allReservations = await _service.GetAllAsync();
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                var filterResult = allReservations.Where(n => n.NameOfReservation.Contains(searchString) || n.DescriptionOfReservation.Contains
+                (searchString)).ToList();
+                return View("Index", filterResult);
+            }
+            return View("Index", allReservations);
+        }
+
         //Get: Reservations/Details/1
         public async Task<IActionResult> Details(int id)
         {
