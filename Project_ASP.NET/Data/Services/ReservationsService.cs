@@ -108,12 +108,12 @@ namespace Project_ASP.NET.Data.Services
         //    await _context.SaveChangesAsync();
         //}
 
-        //public async Task DeleteAsync(int id)
-        //{
-        //    var result = await _context.Reservations.FirstOrDefaultAsync(n => n.ReservationId == id);
-        //    _context.Reservations.Remove(result);
-        //    await _context.SaveChangesAsync();
-        //}
+        public async Task DeleteAsync(int id)
+        {
+            var result = await _context.Reservations.FirstOrDefaultAsync(n => n.ReservationId == id);
+            _context.Reservations.Remove(result);
+            await _context.SaveChangesAsync();
+        }
 
         //public async Task<IEnumerable<Reservation>> GetAllAsync()
         //{

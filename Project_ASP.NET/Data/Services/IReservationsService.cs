@@ -9,7 +9,7 @@ namespace Project_ASP.NET.Data.Services
         //Task<Reservation> GetByIdAsync(int id);
         //Task AddAsync(Reservation reservation);
         //Task<Reservation> UpdateAsync(int id, Reservation newReservation);
-        //Task DeleteAsync(int id);
+        Task DeleteAsync(int id);
         Task<Reservation> GetReservationByIdAsync(int id);
         Task<NewReservationDropdownsVM> GetNewReservationDropdownsValues();
         Task AddNewReservationAsync(NewReservationVM data);

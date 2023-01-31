@@ -1,0 +1,74 @@
+﻿@model Reservation
+
+@{
+    ViewData["Title"] = "Delete Reservation";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Delete confirmation for @Model.NameOfReservation</h1>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <div class="form-group text-center">
+                    <img class="border-info rounded-circle" style="max-width: 150px" id="imgOfReservationPreview" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="NameOfReservation" class="control-label"></label>
+                    <input asp-for="NameOfReservation" class="form-control" readonly />
+                    <span asp-validation-for="NameOfReservation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DescriptionOfReservation" class="control-label"></label>
+                    <input asp-for="DateOfReservation" class="form-control" readonly />
+                    <span asp-validation-for="DateOfReservation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="imgOfReservation" class="control-label"></label>
+                    <input asp-for="imgOfReservation" class="form-control" readonly />
+                    <span asp-validation-for="imgOfReservation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="priceOfReservation" class="control-label"></label>
+                    <input asp-for="priceOfReservation" class="form-control" readonly />
+                    <span asp-validation-for="priceOfReservation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateOfReservation" class="control-label"></label>
+                    <input asp-for="DateOfReservation" class="form-control" readonly />
+                    <span asp-validation-for="DateOfReservation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TimeOfReservation" class="control-label"></label>
+                    <input asp-for="TimeOfReservation" class="form-control" readonly />
+                    <span asp-validation-for="TimeOfReservation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProcedureCategory" class="control-label"></label>
+                    <input asp-for="ProcedureCategory" class="form-control" readonly />
+                    <span asp-validation-for="ProcedureCategory" class="text-danger"></span>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="ReservationId" />
+                        <input type="submit" value="Confirm" class="btn btn-danger float-right" />
+                    </form>
+                    <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            var output = document.getElementById('imgOfReservationPreview');
+            output.src = $("#imgOfReservation").val();
+        })
+    </script>
+}

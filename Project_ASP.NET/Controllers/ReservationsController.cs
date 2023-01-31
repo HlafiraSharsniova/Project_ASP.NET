@@ -92,22 +92,22 @@ namespace Project_ASP.NET.Controllers
         //    await _service.UpdateAsync(id, procedure);
         //    return RedirectToAction(nameof(Index));
         //}
-        ////Get: Procedures/Delete/1
-        //public async Task<IActionResult> Delete(int id)
-        //{
-        //    var procedureDetails = await _service.GetByIdAsync(id);
-        //    if (procedureDetails == null) return View("NotFound");
-        //    return View(procedureDetails);
-        //}
-        //[HttpPost, ActionName("Delete")]
-        //public async Task<IActionResult> DeleteConfirmed(int id)
-        //{
-        //    var procedureDetails = await _service.GetByIdAsync(id);
-        //    if (procedureDetails == null) return View("NotFound");
+        //Get: Reservation/Delete/1
+        public async Task<IActionResult> Delete(int id)
+        {
+            var reservationDetails = await _service.GetReservationByIdAsync(id);
+            if (reservationDetails == null) return View("NotFound");
+            return View(reservationDetails);
+        }
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var reservationDetails = await _service.GetReservationByIdAsync(id);
+            if (reservationDetails == null) return View("NotFound");
 
-        //    await _service.DeleteAsync(id);
-        //    return RedirectToAction(nameof(Index));
-        //}
+            await _service.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
         //Get : Reservation /Edit/1
         public async Task<IActionResult> Edit(int id)
         {
