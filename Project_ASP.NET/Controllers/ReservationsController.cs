@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Project_ASP.NET.Data;
 using Project_ASP.NET.Data.Services;
+using Project_ASP.NET.Data.Static;
 using Project_ASP.NET.Models;
 
 namespace Project_ASP.NET.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
     public class ReservationsController : Controller
     {
         private readonly IReservationsService _service;
@@ -14,11 +17,13 @@ namespace Project_ASP.NET.Controllers
         {
             _service = service;
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var allReservations = await _service.GetAllAsync();
             return View(allReservations);
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
         {
             var allReservations = await _service.GetAllAsync();
@@ -32,6 +37,7 @@ namespace Project_ASP.NET.Controllers
         }
 
         //Get: Reservations/Details/1
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var reservationDetails = await _service.GetReservationByIdAsync(id);

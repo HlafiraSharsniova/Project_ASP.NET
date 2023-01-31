@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project_ASP.NET.Data;
 using Project_ASP.NET.Data.Services;
+using Project_ASP.NET.Data.Static;
 using Project_ASP.NET.Models;
 
 namespace Project_ASP.NET.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
     public class MastersController : Controller
     {
 
@@ -15,6 +18,7 @@ namespace Project_ASP.NET.Controllers
         {
             _service = service;
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var data = await _service.GetAllAsync();
@@ -36,6 +40,7 @@ namespace Project_ASP.NET.Controllers
             return RedirectToAction(nameof(Index));
         }
         //Get: Master /Details/1
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var masterDetails = await _service.GetByIdAsync(id);
