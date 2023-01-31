@@ -15,7 +15,7 @@ namespace Project_ASP.NET.Models
         public string DescriptionOfReservation { get; set; }
         [Display(Name = "Picture of procedure")]
         public string imgOfReservation { get; set; }
-        [Display(Name = "Cost of your reservation")]
+        [Display(Name = "Cost of reservation")]
         public double priceOfReservation { get; set; }
 
         [Display(Name = "Date")]
