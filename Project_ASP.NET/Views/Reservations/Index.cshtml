@@ -34,17 +34,7 @@
                     <p class="card-text"><b>Time of Reservation: </b>@item.TimeOfReservation.ToString("dd MMM yy")</p>
                     <p class="card-text"><b>Category: </b>@item.ProcedureCategory</p>
                     <p class="card-text ">
-                        <b>Status: </b>
-                        @if (DateTime.Now >= item.DateOfReservation && DateTime.Now <= item.TimeOfReservation)
-                        {
-                            <span badge bg-success text-white>AVAILABLE</span>
-                        } else if(DateTime.Now > item.TimeOfReservation)
-                        {
-                            <span badge bg-danger text-white>EXPIRED</span>
-                        } else
-                        {
-                            <span class="badge bg-primary text-white">UPCOMING</span>
-                        }
+                        
                     </p>
 
                 </div>
